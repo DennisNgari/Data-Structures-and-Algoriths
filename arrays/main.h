@@ -2,6 +2,7 @@
 #define MAIN_FILE
 
 void print_array(void);
+void find_size_of_array(void);
 void print_sum_and_avg(void);
 void second_minimum_element(void);
 void largest_number(void);

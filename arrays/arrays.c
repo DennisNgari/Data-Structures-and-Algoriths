@@ -22,7 +22,8 @@ int main(void){
     // matrix_multiplication();
     // remove_duplicates();
     // insert_element_in_sorted_array();
-    insert_elements_unsorted_array();
+    // insert_elements_unsorted_array();
+    find_size_of_array();
     
     
 
@@ -30,6 +31,8 @@ int main(void){
     return (0);
 }
 
+
+//Print an array using user input 
 void print_array(void){
     int a[5];
     int i;
@@ -48,8 +51,30 @@ void print_array(void){
     }  
 }
 
+//Find the size of an array
+void find_size_of_array(void){
 
-// FInd the sum and average of an array.
+
+
+    int arr[10] = {17, 13, 13, 15, -2, 20}; 
+    int i;
+
+    printf("Size of arr array is: %lu \n",sizeof(arr));
+    printf("Size variable int: %lu \n",sizeof(arr[0]));
+    printf("********\n");
+    size_t n = sizeof(arr)/sizeof(int);
+
+    printf("Address of the array is: %p\n",arr);
+    printf("Address of first element of the array is: %p\n",&arr[0]);
+    printf("Value of arr[0]: %d\n", *arr);
+
+    // for(i = 0; i < n; i++){
+    //     printf("%d: %d\n", i, arr[i]);
+    // }
+}
+
+
+// Find the sum and average of an array.
 void print_sum_and_avg(void){
     int k[10];
     int sum = 0, i;
@@ -304,6 +329,7 @@ void insert_elements_unsorted_array(void){
     printf("\n");
 
 }
+
 
 
 
