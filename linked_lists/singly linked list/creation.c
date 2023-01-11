@@ -26,15 +26,11 @@ int main(){
     head -> next = current; 
 
     //Adding the third node
-    free(current);
     current = malloc(sizeof(struct node));
     printf("The current pointer now points to address: %p\n", current);
     current -> data = 3;
     current -> next = NULL; 
     head -> next -> next = current;
-
     
-
-
     return 0;
 }

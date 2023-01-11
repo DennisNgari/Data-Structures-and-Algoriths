@@ -18,7 +18,23 @@ struct node{
 
 
 
-//Funct: 1. function to traverse a singly linked list.
+// Counting the number of nodes in a singly linked list
+void count_of_nodes(struct node *head){
+    int count = 0;
+    if(head == NULL){
+        printf("Linked list is empty");
+    }
+    struct node *ptr = NULL;
+    ptr = head;
+    while(ptr != NULL){
+        count ++;
+        ptr = ptr -> next;
+    }
+     printf("Count: %d\n", count);
+}
+
+
+//Funct: 2. function to traverse a singly linked list.
 void print_data(struct node *head){
     
     if(head == NULL){
@@ -62,7 +78,9 @@ int main(){
     current -> next = NULL; 
     head -> next -> next = current;
 
-    print_data(head);
+    // print_data(head);
+    count_of_nodes(head);
+
 
 
     return 0;
