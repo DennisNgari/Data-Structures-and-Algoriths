@@ -68,9 +68,9 @@ void find_size_of_array(void){
     printf("Address of first element of the array is: %p\n",&arr[0]);
     printf("Value of arr[0]: %d\n", *arr);
 
-    // for(i = 0; i < n; i++){
-    //     printf("%d: %d\n", i, arr[i]);
-    // }
+    for(i = 0; i < n; i++){
+        printf("%d: %d\n", i, arr[i]);
+    }
 }
 
 
