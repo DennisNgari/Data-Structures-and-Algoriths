@@ -6,7 +6,7 @@
  * main - Inserting a node at the beginning of a singly linked list.
  *
  * Description: Adding a function that inserts a node at the beginning 
- * of a singly linked list
+ * of a singly linked list using double pointers.
  *
  * Return: Always 0 (Success)
  */
@@ -17,17 +17,15 @@ struct node{
 };
 
 
-// Function add node at the beginning 
-struct node *add_beg(struct node *head, int data)
+// Method 2. add node at the beginning 
+void add_beg(struct node **head, int data)
 {
     struct node *ptr = malloc(sizeof(struct node));
     ptr -> data = data;
     ptr -> next = NULL;
 
-    ptr -> next = head;
-    head = ptr;
-
-    return head;
+    ptr -> next = *head;
+    *head = ptr;
 
 }
 
@@ -48,11 +46,8 @@ int main(){
     head -> next = ptr;
     
 
-    // in the fxn, head is the address of the first node.
-    head = add_beg(head, 64);
-    head = add_beg(head, 70);
-    head = add_beg(head, 56);
-    head = add_beg(head, 99);
+    // In the fxn, head is the address of the first node.
+    add_beg(&head, 64);
 
 
     // After inserting the values, make the head point to the ptr
