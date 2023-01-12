@@ -330,6 +330,17 @@ void insert_elements_unsorted_array(void){
 
 }
 
+// Insert a new element in an array at a certain position 
+// in an array thats already full.
+
+
+// create a new array of size 1 greater than the size of the original array
+// Steps copy everything up to (position -1 ) and paste it to the new array
+// Insert the new element at the given position 
+// copy the rest of the elements of the previous array to the new array 
+
+int main()
+
 
 
 
