@@ -11,6 +11,7 @@
 
 int main(void){
     // print_array();
+    //find_size_of_array();
     // print_sum_and_avg();
     // largest_number();
     // read_two_arrays();
@@ -23,7 +24,12 @@ int main(void){
     // remove_duplicates();
     // insert_element_in_sorted_array();
     // insert_elements_unsorted_array();
-    find_size_of_array();
+    // delete_element_sorted_array();
+    // delete_element_unsorted_array();
+    // sort_and_find_minimum_element();
+    // first_non_repeating_int();**
+    // merge_sorted_array();**
+    // rearage_+ve_-ve_values();**
     
     
 
@@ -176,28 +182,6 @@ void print_2D_array_and_sum(void){
 
 }
 
-//Write a program to print the transpose of a matrix.
-void transpose_mattrix(void){
-
-int a[2][3] = {{1,2,3},{4,5,6}};
-int t[3][2];
-int i, j;
-
-for (i = 0; i < 3; i++){
-    for (j = 0; j < 2; j++){
-        t[i][j] = a[j][i];
-    }
-}
-
-for (i = 0; i < 3; i++){
-    for (j = 0; j < 2; j++){
-    printf("%d\t", t[i][j]);
-    }
-    printf("\n");
-}
-
-}
-
 // write a program to print the sum of individual rows and columns of a matrix.
 void print_sum_of_individual_rows_and_columns(void){
     
@@ -330,17 +314,85 @@ void insert_elements_unsorted_array(void){
 
 }
 
-// Insert a new element in an array at a certain position 
-// in an array thats already full.
+// Deleting data in an unsorted array (O(n))
+void delete_element_sorted_array(){
+    int arr[10] = {3,4,5,6,7,8,8,9,10,11};
+    int pos=7, size, i;
+    size = sizeof(arr)/sizeof(arr[0]);
+
+    for (i=pos-1; i < size-1; i++){
+        arr[i] = arr[i+1];
+    }
+        size--;
+
+    for(i=0; i<size; i++){
+        printf("%d\n", arr[i]);
+    }
+}
+
+// Deleting data in a sorted array O(1)
+void delete_element_unsorted_array(void){
+    int arr[10] = {2,4,7,19,3,12,45,98,43,6};
+    int pos = 7, size, i;
+
+    size = sizeof(arr)/sizeof(arr[0]);
+    arr[pos-1] = arr[size-1];
+    size--;
+
+    for(i=0; i<size; i++){
+        printf("%d\n", arr[i]);
+    }
+}
+
+// find_minimum_element in an array
+void find_minimum_element(void){
+    int arr[10] = {2,4,7,19,3,12,45,98,43,6};
+    int i,j,size,temp;
+    size = sizeof(arr)/sizeof(arr[0]);
+
+    for(i=0; i<size; i++){
+        for(j=0; j<size-1; j++){
+            if(arr[j] > arr[j+1]){
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+
+    printf("The minimum element in the array is: %d\n",arr[0]);
+}
 
 
-// create a new array of size 1 greater than the size of the original array
-// Steps copy everything up to (position -1 ) and paste it to the new array
-// Insert the new element at the given position 
-// copy the rest of the elements of the previous array to the new array 
 
-int main()
 
+
+
+
+
+
+
+//Write a program to print the transpose of a matrix.
+
+void transpose_mattrix(void){
+int a[2][3] = {{1,2,3},{4,5,6}};
+int t[3][2];
+int i, j;
+
+for (i = 0; i < 3; i++){
+    for (j = 0; j < 2; j++){
+        t[i][j] = a[j][i];
+    }
+}
+
+for (i = 0; i < 3; i++){
+    for (j = 0; j < 2; j++){
+    printf("%d\t", t[i][j]);
+    }
+    printf("\n");
+}
+
+}
 
 
 

@@ -15,6 +15,9 @@ void print_sum_of_two_matrix_and_save_result(void);
 void matrix_multiplication(void);
 void insert_element_in_array(void);
 void insert_elements_unsorted_array(void);
+void delete_element_sorted_array(void);
+void delete_element_unsorted_array(void);
+void sort_and_find_minimum_element(void);
 
 
 #endif
